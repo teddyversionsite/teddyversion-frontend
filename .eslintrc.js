@@ -8,7 +8,10 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
+    project: ['tsconfig.json'],
   },
   plugins: ['react', 'prettier'],
-  rules: {},
+  rules: {
+    '@typescript-eslint/strict-boolean-expressions': ['error', { allowNullableObject: true }],
+  },
 };
