@@ -1,9 +1,10 @@
 {
-  "semi": true,
+  "semi": false,
   "tabWidth": 2,
   "printWidth": 100,
   "singleQuote": true,
   "trailingComma": "es5",
   "jsxBracketSameLine": false,
-  "prettier.semi": false
+  "prettier.semi": false,
+  "importOrder": ["^@core/(.*)$", "^@server/(.*)$", "^@ui/(.*)$", "^[./]"]
 }
