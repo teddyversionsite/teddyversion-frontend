@@ -1,14 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { elgooseApi } from './services/elgoose'
-import { setupListeners } from '@reduxjs/toolkit/query'
+import { musicServiceApi } from './services/musicService'
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
       [elgooseApi.reducerPath]: elgooseApi.reducer,
+      [musicServiceApi.reducerPath]: musicServiceApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(elgooseApi.middleware),
+      getDefaultMiddleware()
+        .concat(elgooseApi.middleware)
+        .concat(musicServiceApi.middleware),
   })
 }
 
